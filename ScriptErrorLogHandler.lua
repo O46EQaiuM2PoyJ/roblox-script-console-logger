@@ -41,7 +41,7 @@ remote.OnServerEvent:Connect(function(p,data)
 	queue = queue..'>|'..p.UserId..'>>'..base64decode(data);
 end);
 
-while(wait(5)) do
+while(wait(15)) do
 	local response = '';
 	if(queue~='' and queue~=' ') then
 		queue = string.gsub(queue, "\n", "");
