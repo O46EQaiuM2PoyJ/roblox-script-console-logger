@@ -1,5 +1,5 @@
 -- O46EQaiuM2PoyJ Dec 4 2019
--- Put this in game.ReplicatedFirst
+-- Put this in a LocalScript in game.ReplicatedFirst
 
 local remote = game:GetService('ReplicatedStorage'):WaitForChild('Spectate2');
 
