@@ -1,4 +1,4 @@
--- frickmyposterior Dec 4 2019
+-- O46EQaiuM2PoyJ Dec 4 2019
 -- Put this in game.ServerScriptStorage
 
 local remote = Instance.new('RemoteEvent',game:GetService('ReplicatedStorage')); remote.Name = 'Spectate2';
