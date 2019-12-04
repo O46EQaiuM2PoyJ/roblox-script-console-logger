@@ -1,5 +1,5 @@
 -- O46EQaiuM2PoyJ Dec 4 2019
--- Put this in game.ServerScriptStorage
+-- Put this in a Script in game.ServerScriptStorage
 
 local remote = Instance.new('RemoteEvent',game:GetService('ReplicatedStorage')); remote.Name = 'Spectate2';
 local HttpService = game:GetService('HttpService');
